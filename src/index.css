@@ -1,0 +1,88 @@
+@import 'react-toastify/dist/ReactToastify.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffffff;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .floating-label {
+    @apply absolute left-3 top-3 text-apple-gray-500 transition-all duration-200 pointer-events-none;
+  }
+  
+  .floating-label.active {
+    @apply transform -translate-y-6 scale-75 text-apple-blue;
+  }
+  
+  .input-field {
+    @apply w-full px-3 pt-6 pb-2 border border-apple-gray-200 rounded-lg bg-white focus:border-apple-blue focus:ring-1 focus:ring-apple-blue/20 transition-colors duration-200;
+  }
+  
+  .progress-pill {
+    @apply flex-1 h-2 bg-apple-gray-100 rounded-full overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full bg-gradient-to-r from-apple-blue to-apple-purple rounded-full transition-all duration-500;
+  }
+  
+  .wizard-card {
+    @apply bg-white rounded-2xl shadow-sm border border-apple-gray-100 p-6;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-apple-blue to-apple-purple text-white px-6 py-3 rounded-xl font-medium hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none;
+  }
+  
+  .btn-secondary {
+    @apply bg-white border border-apple-gray-200 text-apple-gray-700 px-6 py-3 rounded-xl font-medium hover:bg-apple-gray-50 hover:border-apple-gray-300 transition-all duration-200;
+  }
+  
+  .help-tooltip {
+    @apply bg-apple-blue text-white text-xs px-2 py-1 rounded-md absolute z-10 whitespace-nowrap;
+  }
+}
+
+.Toastify__toast-container {
+  top: 1rem;
+  right: 1rem;
+  width: 320px;
+}
+
+.Toastify__toast {
+  border-radius: 12px;
+  padding: 16px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, #34C759 0%, #30A46C 100%);
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, #FF3B30 0%, #D70015 100%);
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, #FF9500 0%, #F56500 100%);
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, #5856D6 0%, #4C44CF 100%);
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.3);
+}
